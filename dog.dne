@@ -1,11 +1,11 @@
 // ~->[DNET-1]->~
 
-// File created by GmytrasiewiczP_2 at UIC using Netica 5.00 on Oct 25, 2018 at 23:38:36.
+// File created by GmytrasiewiczP_2 at UIC using Netica 5.00 on Nov 11, 2018 at 18:23:17.
 
 bnet dog {
 AutoCompile = TRUE;
 autoupdate = TRUE;
-whenchanged = 1540528691;
+whenchanged = 1541982191;
 
 visual V1 {
 	defdispform = BELIEFBARS;
@@ -46,7 +46,7 @@ node Gender {
 		// Male         Female       
 		  (0.5,         0.5);
 	whenchanged = 1540527997;
-	belief = (0.4815674, 0.5184326);
+	belief = (0.5434448, 0.4565553);
 	visual V1 {
 		center = (90, 78);
 		height = 1;
@@ -63,7 +63,7 @@ node Age_in_months {
 		// 0-2          2-12         12-240       
 		  (0.05,        0.1,         0.85);
 	whenchanged = 1540527998;
-	belief = (0.0385871, 0.1234426, 0.8379703);
+	belief = (0.09387192, 0.09923977, 0.8068883);
 	visual V1 {
 		center = (318, 84);
 		height = 2;
@@ -85,7 +85,7 @@ node Exercise_minutes {
 		   0.3,         0.68,        0.02,         // Female 2-12          
 		   0.02,        0.6,         0.38);        // Female 12-240        ;
 	whenchanged = 1540519421;
-	belief = (0.0924513, 0.4686029, 0.4389458);
+	belief = (0.1055344, 0.2596598, 0.6348057);
 	visual V1 {
 		center = (108, 252);
 		height = 18;
@@ -118,8 +118,9 @@ node Getting_required_exercise {
 		   0.95,        0.05,         // 60               2-12          Female 
 		   0.85,        0.15,         // 60               12-240        Male   
 		   0.9,         0.1);         // 60               12-240        Female ;
-	whenchanged = 1540523749;
-	belief = (0.5327493, 0.4672507);
+	whenchanged = 1541982107;
+	evidence = #0;
+	belief = (1, 0);
 	visual V1 {
 		center = (96, 492);
 		height = 14;
@@ -138,7 +139,7 @@ node Breed {
 	states = (Small, Medium, Large);
 	parents = ();
 	whenchanged = 1540527999;
-	belief = (0.2937252, 0.3504381, 0.3558367);
+	belief = (0.4195222, 0.3177527, 0.2627251);
 	visual V1 {
 		center = (564, 78);
 		height = 21;
@@ -163,7 +164,7 @@ node Quantity_per_feeding {
 		   0.19,        0.8,         0.01,         // 12-240        Medium 
 		   0.01,        0.6,         0.39);        // 12-240        Large  ;
 	whenchanged = 1540521631;
-	belief = (0.3265527, 0.4928526, 0.1805948);
+	belief = (0.475782, 0.3900116, 0.1342064);
 	visual V1 {
 		center = (318, 276);
 		height = 17;
@@ -205,8 +206,9 @@ node Getting_proper_quantity_food {
 		   0.01,        0.99,         // 1-1.5                12-240        Small  
 		   0.01,        0.99,         // 1-1.5                12-240        Medium 
 		   0.6,         0.4);         // 1-1.5                12-240        Large  ;
-	whenchanged = 1540523747;
-	belief = (0.6737452, 0.3262548);
+	whenchanged = 1541982108;
+	evidence = #0;
+	belief = (1, 0);
 	visual V1 {
 		center = (312, 486);
 		height = 15;
@@ -235,7 +237,7 @@ node No_of_times_to_feed_food {
 		   0.82,        0.15,        0.03);        // 12-240        Large  ;
 	numcases = 1;
 	whenchanged = 1540522282;
-	belief = (0.7146729, 0.2193053, 0.06602181);
+	belief = (0.7804493, 0.1240955, 0.0954553);
 	visual V1 {
 		center = (564, 282);
 		height = 16;
@@ -277,8 +279,9 @@ node Getting_proper_number_food {
 		   0.01,        0.99,         // 4                        12-240        Small  
 		   0.05,        0.95,         // 4                        12-240        Medium 
 		   0.1,         0.9);         // 4                        12-240        Large  ;
-	whenchanged = 1540523750;
-	belief = (0.786886, 0.213114);
+	whenchanged = 1541982110;
+	evidence = #0;
+	belief = (1, 0);
 	visual V1 {
 		center = (588, 492);
 		height = 11;
@@ -299,16 +302,17 @@ node Changes_LifeStyle_Required {
 	parents = (Getting_required_exercise, Getting_proper_quantity_food, Getting_proper_number_food);
 	probs = 
 		// yes          no            // Getting_required_exercise Getting_proper_quantity_food Getting_proper_number_food 
-		  (0.99,        0.01,         // yes                       yes                          yes                        
-		   0.7,         0.3,          // yes                       yes                          no                         
-		   0.6,         0.4,          // yes                       no                           yes                        
-		   0.3,         0.7,          // yes                       no                           no                         
-		   0.6,         0.4,          // no                        yes                          yes                        
-		   0.3,         0.7,          // no                        yes                          no                         
-		   0.2,         0.8,          // no                        no                           yes                        
-		   0.01,        0.99);        // no                        no                           no                         ;
-	whenchanged = 1540523166;
-	belief = (0.4229167, 0.5770833);
+		  (0.01,        0.99,         // yes                       yes                          yes                        
+		   0.3,         0.7,          // yes                       yes                          no                         
+		   0.4,         0.6,          // yes                       no                           yes                        
+		   0.7,         0.3,          // yes                       no                           no                         
+		   0.4,         0.6,          // no                        yes                          yes                        
+		   0.7,         0.3,          // no                        yes                          no                         
+		   0.8,         0.2,          // no                        no                           yes                        
+		   0.99,        0.01);        // no                        no                           no                         ;
+	whenchanged = 1541982186;
+	evidence = #1;
+	belief = (0, 1);
 	visual V1 {
 		center = (438, 684);
 		height = 12;
@@ -321,7 +325,7 @@ node Vaccination_Stage {
 	statetitles = ("1st", "2nd", "3rd");
 	parents = ();
 	whenchanged = 1540528002;
-	belief = (0.2582035, 0.3519861, 0.3898104);
+	belief = (0.1916326, 0.367662, 0.4407054);
 	visual V1 {
 		center = (948, 78);
 		height = 4;
@@ -334,7 +338,7 @@ node Deworming_Stage {
 	statetitles = ("1st", "2nd", "3rd");
 	parents = ();
 	whenchanged = 1540528003;
-	belief = (0.3290364, 0.3364253, 0.3345382);
+	belief = (0.3281427, 0.3355579, 0.3362994);
 	visual V1 {
 		center = (1134, 78);
 		height = 5;
@@ -347,7 +351,7 @@ node On_Calcium_Supplements {
 	statetitles = ("Yes", "No");
 	parents = ();
 	whenchanged = 1540528004;
-	belief = (0.504557, 0.495443);
+	belief = (0.5095854, 0.4904146);
 	visual V1 {
 		center = (1386, 132);
 		height = 25;
@@ -360,7 +364,7 @@ node On_Immunity_Supplements {
 	statetitles = ("Yes", "No");
 	parents = ();
 	whenchanged = 1540528005;
-	belief = (0.5082082, 0.4917918);
+	belief = (0.517262, 0.482738);
 	visual V1 {
 		center = (1422, 228);
 		height = 19;
@@ -373,7 +377,7 @@ node On_Vitamins_Supplements {
 	statetitles = ("Yes", "No");
 	parents = ();
 	whenchanged = 1540528006;
-	belief = (0.504007, 0.495993);
+	belief = (0.5084304, 0.4915696);
 	visual V1 {
 		center = (1422, 348);
 		height = 20;
@@ -397,7 +401,7 @@ node Supplement_Level {
 		   0.05,        0.15,        0.8,          // No                     No                      Yes                     
 		   0,           0,           1);           // No                     No                      No                      ;
 	whenchanged = 1540525283;
-	belief = (0.4805315, 0.1992232, 0.3202453);
+	belief = (0.4935376, 0.1983503, 0.3081121);
 	visual V1 {
 		center = (1218, 288);
 		height = 24;
@@ -494,7 +498,7 @@ node Getting_Good_HealthTreatment {
 		   0.95,        0.05,         // 3rd               3rd             12-240        Medium           
 		   0.9,         0.1);         // 3rd               3rd             12-240        Low              ;
 	whenchanged = 1540527332;
-	belief = (0.6179584, 0.3820416);
+	belief = (0.781741, 0.218259);
 	visual V1 {
 		center = (1008, 288);
 		height = 23;
@@ -507,7 +511,7 @@ node Weight_in_kgs {
 	statetitles = ("0-10", "11-20", "21-30", "31-50");
 	parents = ();
 	whenchanged = 1540528001;
-	belief = (0.2077873, 0.2342074, 0.2730081, 0.2849972);
+	belief = (0.1815642, 0.233414, 0.290852, 0.2941698);
 	visual V1 {
 		center = (768, 78);
 		height = 3;
@@ -559,7 +563,7 @@ node Recommended_Weight {
 		   0,           0.1,         0.9,          // 31-50         Large  2-12          
 		   0,           1,           0);           // 31-50         Large  12-240        ;
 	whenchanged = 1540527333;
-	belief = (0.3785522, 0.3729914, 0.2484564);
+	belief = (0.2328289, 0.4667924, 0.3003786);
 	visual V1 {
 		center = (792, 294);
 		height = 22;
@@ -580,8 +584,9 @@ node Health_Fitness {
 		   0,           1,            // No                           Underweight        
 		   0.6,         0.4,          // No                           Fit                
 		   0.05,        0.95);        // No                           Obese              ;
-	whenchanged = 1540527537;
-	belief = (0.6964635, 0.3035365);
+	whenchanged = 1541982188;
+	evidence = #0;
+	belief = (1, 0);
 	visual V1 {
 		center = (936, 426);
 		height = 13;
@@ -594,7 +599,7 @@ node Activity_Level {
 	statetitles = ("low", "normal", "high");
 	parents = ();
 	whenchanged = 1540528008;
-	belief = (0.3120187, 0.3818834, 0.3060979);
+	belief = (0.2753623, 0.4653784, 0.2592593);
 	visual V1 {
 		center = (1428, 486);
 		height = 6;
@@ -607,7 +612,7 @@ node Sleeping_changes {
 	statetitles = ("less", "normal", "high");
 	parents = ();
 	whenchanged = 1540528009;
-	belief = (0.3001772, 0.3907645, 0.3090583);
+	belief = (0.2431562, 0.489533, 0.2673108);
 	visual V1 {
 		center = (1434, 588);
 		height = 7;
@@ -620,7 +625,7 @@ node Bowel_movement {
 	statetitles = ("Regular", "Irregular");
 	parents = ();
 	whenchanged = 1540528010;
-	belief = (0.6086456, 0.3913544);
+	belief = (0.7954912, 0.2045089);
 	visual V1 {
 		center = (1428, 684);
 		height = 8;
@@ -653,8 +658,9 @@ node Symptoms {
 		   0.95,        0.05,         // high           normal           Irregular      
 		   0.55,        0.45,         // high           high             Regular        
 		   0.99,        0.01);        // high           high             Irregular      ;
-	whenchanged = 1540522938;
-	belief = (0.414171, 0.585829);
+	whenchanged = 1541982191;
+	evidence = #1;
+	belief = (0, 1);
 	visual V1 {
 		center = (1212, 522);
 		height = 9;
@@ -677,8 +683,7 @@ node Vet_Visit_Required {
 		   0,           1,            // no                         Fit            No       
 		   0.85,        0.15,         // no                         Not Fit        Yes      
 		   0.65,        0.35);        // no                         Not Fit        No       ;
-	whenchanged = 1540528691;
-	evidence = #1;
+	whenchanged = 1541982116;
 	belief = (0, 1);
 	visual V1 {
 		center = (1008, 636);
